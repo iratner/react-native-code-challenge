@@ -21,8 +21,8 @@ The requirements for your application are as follows:
     * [API console](https://any-api.com/xkcd_com/xkcd_com/console/_comicId_info_0_json/GET)
 2) The list should includes a thumbnail, title, and date published for each comic.
 3) Comics are sorted by date with the most recent comics first.
-4) Includes a switch that, when on, sorts the comic strips by date so the least recent comics are first.
-5) When the switch is off, the comics revert to most recent first.
+4) Includes a component that, when on, sorts the comic strips by date so the least recent comics are first.
+5) When the component is off, the comics revert to most recent first.
 6) Style however you would like, but keep in mind guidelines provided by [Apple](https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/) and [Google](https://developer.android.com/design) where applicable.
 7) Tapping on a list item will show the detail view for the comic containing all pertinent information provided by the API.
 8) The comic detail should includes an image, title, date published and transcript for each comic.
