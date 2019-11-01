@@ -1,7 +1,14 @@
 # React Native Code Challenge
 
+# Ilya's Notes
+
+Requires cocoapods 1.8.* to work correctly, otherwise you can cause some issues
+npm run ios will not work, running the target in xcode works perfectly
+
 Welcome to Rhove's React Native code challenge! We've already created all the boilerplate for you, so you can spend your time solving problems rather than setting up.
 
+
+# From Rhove (Original Start)
 You have one week to complete this challenge and it should take you **no longer than 4 hours**. We want to be respectful of your time, so at the four-hour mark, submit your challenge and go celebrate a job well done. If there's work you would have completed if you'd had more time (and the app was meant for production), feel free to write that down and submit it along with your code. 
 
 Let us know if you have any questions, and good luck!

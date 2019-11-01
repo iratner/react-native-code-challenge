@@ -4,16 +4,18 @@
 
 import React from 'react';
 import {SafeAreaView, Image} from 'react-native';
+import { styles } from './src/style/ComicsStyle';
+import { ComicsWrapper, Comics } from './src/views';
+
+export const ThemeContext = React.createContext( { style: styles })
 
 class App extends React.Component {
   render() {
     return (
-      <SafeAreaView>
-        <Image
-          source={require('./so-it-begins.jpg')}
-          style={{width: '100%'}}
-          resizeMode={'contain'}
-        />
+      <SafeAreaView style={[styles.fullHeightAndWidth]}>
+        {/* <ThemeContext.Provider value={styles}> */}
+          <Comics/>
+        {/* </ThemeContext.Provider> */}
       </SafeAreaView>
     );
   }
