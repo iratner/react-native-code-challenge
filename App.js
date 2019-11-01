@@ -7,8 +7,6 @@ import {SafeAreaView, Image} from 'react-native';
 import { styles } from './src/style/ComicsStyle';
 import { ComicsWrapper, Comics } from './src/views';
 
-export const ThemeContext = React.createContext( { style: styles })
-
 class App extends React.Component {
   render() {
     return (

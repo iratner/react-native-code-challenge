@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-export const styles = StyleSheet.create({
+export const rhoveStyle = StyleSheet.create({
    flexCenter: {
       alignItems: 'center',
       justifyContent: 'center'
@@ -10,4 +10,4 @@ export const styles = StyleSheet.create({
       width: '100%',
       flex: 1
    }
-})
+});
