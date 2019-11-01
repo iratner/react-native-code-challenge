@@ -4,7 +4,7 @@ import { REQUESTS, comicsFetch, formatDate} from '../util/';
 
 import { ActivityIndicator } from 'react-native';
 // import { ThemeContext } from '../../App';
-import { styles } from '../style/ComicsStyle';
+import { withStyle } from '../contexts/StyleContext';
 
 class Comics extends React.Component{
    constructor(props) {
@@ -55,19 +55,22 @@ class Comics extends React.Component{
 
    render() {
       const { requested } = this.state;
+      const { rhoveStyle } = this.props;
 
       if (requested) {
          return this.renderComics();
       } else {
-         return <ActivityIndicator 
-                     size="large" 
-                     color="rgb(240,50,85)" 
-                     style={[styles.fullHeightAndWidth, styles.flexCenter]}
-                  />;
+         return (
+            <ActivityIndicator 
+               size="large" 
+               color="rgb(240,50,85)" 
+               style={[rhoveStyle.fullHeightAndWidth, rhoveStyle.flexCenter]}
+            />
+         );
       }
       
    }
 }
-   
-// Comics.contextType = ThemeContext;
-export default Comics;
+ 
+
+export default withStyle(Comics);

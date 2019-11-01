@@ -4,12 +4,10 @@ export const StyleContext = React.createContext({});
 
 export const withStyle = Component => props => {
     return (
-        <StyleContext.Producer>
+        <StyleContext.Consumer>
             { ({ rhoveStyle }) => (
-                <StyleContext.Consumer>
-                    <Component {...props} rhoveStyle={rhoveStyle}/>
-                </StyleContext.Consumer>
+              <Component {...props} rhoveStyle={rhoveStyle}/>
             )}
-        </StyleContext.Producer>
+        </StyleContext.Consumer>
     )
 };

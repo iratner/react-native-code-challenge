@@ -4,16 +4,17 @@
 
 import React from 'react';
 import {SafeAreaView, Image} from 'react-native';
-import { styles } from './src/style/ComicsStyle';
+import { rhoveStyle } from './src/style/ComicsStyle';
 import { ComicsWrapper, Comics } from './src/views';
+import { StyleContext } from './src/contexts/StyleContext';
 
 class App extends React.Component {
   render() {
     return (
-      <SafeAreaView style={[styles.fullHeightAndWidth]}>
-        {/* <ThemeContext.Provider value={styles}> */}
+      <SafeAreaView style={rhoveStyle.fullHeightAndWidth}>
+        <StyleContext.Provider value={{rhoveStyle}}>
           <Comics/>
-        {/* </ThemeContext.Provider> */}
+        </StyleContext.Provider>
       </SafeAreaView>
     );
   }
