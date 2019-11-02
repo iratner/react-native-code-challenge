@@ -1,21 +1,31 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { ScrollView, Text, Image, TouchableHighlight, View } from 'react-native';
 import { withStyle } from '../contexts/StyleContext';
 
-export const ComicFull = ({img, year, title, alt, date, useFallback, rhoveStyle}) => {
+export const ComicFull = ({img, title, alt, date, transcript, rhoveStyle, onClose}) => {
  
    return (
       
-         <View style={[rhoveStyle.flexRow, rhoveStyle.padding10, rhoveStyle.borderBottom]}>
-            <View styles={[rhoveStyle.flexColumn]}>
-               <Text style={[rhoveStyle.textSize18, rhoveStyle.paddingLeft10]} >{title}</Text>
-               <Text style={[rhoveStyle.textSize18, rhoveStyle.paddingLeft10]} >published: {date}</Text>
-            </View>
-            <View>
+      <View>
+         <View>
+            <TouchableHighlight onPress={(onClose)}>
+               <Text style={rhoveStyle.closeButton}>Go Back</Text>
+            </TouchableHighlight>
+         </View>
+         <ScrollView style={rhoveStyle.padding1Horizontal0}>
+               <Text style={[rhoveStyle.textSize18, rhoveStyle.paddingLeft10]} >
+                  <Text style={rhoveStyle.fontWeightBold}>title:  </Text>{title}
+               </Text>
+               <Text style={[rhoveStyle.textSize18, rhoveStyle.paddingLeft10]}> 
+                  <Text style={rhoveStyle.fontWeightBold}>published:  </Text>{date}
+               </Text>               
                <Image source={{uri: img}} accessibilityLabel={alt} 
-                  style={rhoveStyle.comicThumbnail} 
+                  style={rhoveStyle.comicFull} 
                   resizeMode={"contain"}/>
-            </View>            
-         </View>      
+               <Text style={[rhoveStyle.textSize18, rhoveStyle.paddingLeft10]}> 
+                  <Text style={rhoveStyle.fontWeightBold}>transcript:  </Text>{transcript}
+               </Text>
+         </ScrollView>      
+      </View>
    );
 }

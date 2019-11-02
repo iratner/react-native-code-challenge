@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, TouchableHighlight } from 'react-native';
 
 import { ComicThumbnail } from '../components';
 import { withStyle } from '../contexts/StyleContext';
@@ -16,6 +16,10 @@ class ComicsWrapper extends React.PureComponent {
       this.setState({ selectedComic });
    }
 
+   closeComic = () => {
+      this.setState({ selectedComic: null });
+   }
+
    render() {
       const { comics, rhoveStyle } = this.props;
       const { sort, selectedComic } = this.state;
@@ -24,13 +28,16 @@ class ComicsWrapper extends React.PureComponent {
          return sort ? a.milliseconds - b.milliseconds : b.milliseconds - a.milliseconds;
       });
 
-      if (selectedComic) return <ComicFull {...selectedComic} rhoveStyle={rhoveStyle} />;
+      if (selectedComic) 
+         return <ComicFull {...selectedComic} rhoveStyle={rhoveStyle} onClose={() => this.closeComic()}/>;
 
       else {
 
          return (
             <View >
-               <Text>XKCD Comics</Text>
+               <TouchableHighlight onPress={() => this.setState({ sort: !sort})}>
+                  <Text style={rhoveStyle.actionButton}>Toggle Sort Order</Text>
+               </TouchableHighlight>
                {/* <div className="sort-comics">
                   <label htmlFor="sort-comics-checkbox">sort in ascending order: 
                      <input 

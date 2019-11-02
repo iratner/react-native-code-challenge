@@ -24,6 +24,9 @@ export const rhoveStyle = StyleSheet.create({
    padding10: {
       padding: 10
    },
+   padding1Horizontal0: {
+      paddingHorizontal: 10
+   },
    paddingLeft10: {
       paddingLeft: 10
    },
@@ -32,10 +35,26 @@ export const rhoveStyle = StyleSheet.create({
    textSize18: {
       fontSize: 18
    },
+   fontWeightBold: {
+      fontWeight: "700"
+   },
 
    // BORDER STYLES
    borderBottom: {
       borderBottomColor:  'rgb(240,50,85)',
       borderBottomWidth: StyleSheet.hairlineWidth
+   },
+
+   closeButton: {
+      color: 'rgb(240,50,85)',
+      fontSize: 20,
+      textAlign: 'center',
+      marginBottom: 20
+   },
+   actionButton: {
+      color: 'rgb(40,150,85)',
+      fontSize: 20,
+      textAlign: 'center',
+      marginBottom: 20
    }
 });
