@@ -4,7 +4,7 @@
 
 import React from 'react';
 import {SafeAreaView, Image} from 'react-native';
-import { rhoveStyle } from './src/style/ComicsStyle';
+import { rhoveStyle } from './src/style/Styles';
 import { ComicsWrapper, Comics } from './src/views';
 import { StyleContext } from './src/contexts/StyleContext';
 
