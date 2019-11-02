@@ -11,7 +11,7 @@ import { StyleContext } from './src/contexts/StyleContext';
 class App extends React.Component {
   render() {
     return (
-      <SafeAreaView style={rhoveStyle.fullHeightAndWidth}>
+      <SafeAreaView style={{flex: 1, flexGrow: 1}}>
         <StyleContext.Provider value={{rhoveStyle}}>
           <Comics/>
         </StyleContext.Provider>

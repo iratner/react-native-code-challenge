@@ -1,6 +1,12 @@
 import { StyleSheet } from 'react-native';
 import { ComicsStyle } from './component-styles/ComicsStyle';
 
+const colorNegate = 'rgb(240,50,85)';
+const colorAction = 'rgb(40,150,85)';
+
+const colorNegateBg = 'rgba(240,50,85,.25)';
+const colorActionBg = 'rgba(40,150,85,.25)';
+
 export const rhoveStyle = StyleSheet.create({
    ...ComicsStyle,
 
@@ -9,9 +15,8 @@ export const rhoveStyle = StyleSheet.create({
       justifyContent: 'center'
    },
    fullHeightAndWidth: {
-      height: '100%',
-      width: '100%',
-      flex: 1
+      flex: 1,
+      flexGrow: 1
    },
    flexRow: {
       flexDirection: 'row'
@@ -41,20 +46,27 @@ export const rhoveStyle = StyleSheet.create({
 
    // BORDER STYLES
    borderBottom: {
-      borderBottomColor:  'rgb(240,50,85)',
+      borderBottomColor:  colorNegate,
       borderBottomWidth: StyleSheet.hairlineWidth
    },
 
+   // BUTTONS
    closeButton: {
-      color: 'rgb(240,50,85)',
-      fontSize: 20,
-      textAlign: 'center',
-      marginBottom: 20
+      height: 50,
+      backgroundColor: colorNegateBg
    },
    actionButton: {
-      color: 'rgb(40,150,85)',
+      height: 50,
+      backgroundColor: colorActionBg
+   },
+   closeButtonText: {
+      color: colorNegate,
       fontSize: 20,
-      textAlign: 'center',
-      marginBottom: 20
+      textAlign: 'center'
+   },
+   actionButtonText: {
+      color: colorAction,
+      fontSize: 20,
+      textAlign: 'center'
    }
 });

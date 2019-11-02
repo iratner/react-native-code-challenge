@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, TouchableHighlight } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 
 import { ComicThumbnail } from '../components';
 import { withStyle } from '../contexts/StyleContext';
@@ -11,8 +11,8 @@ class ComicsWrapper extends React.PureComponent {
       selectedComic: null
    }
 
-   showFullComic = id => {
-      const selectedComic = this.props.comics.find( comic => comic.id === id);
+   showFullComic = num => {
+      const selectedComic = this.props.comics.find( comic => comic.num === num);
       this.setState({ selectedComic });
    }
 
@@ -34,10 +34,7 @@ class ComicsWrapper extends React.PureComponent {
       else {
 
          return (
-            <View >
-               <TouchableHighlight onPress={() => this.setState({ sort: !sort})}>
-                  <Text style={rhoveStyle.actionButton}>Toggle Sort Order</Text>
-               </TouchableHighlight>
+            <View style={rhoveStyle.fullHeightAndWidth}>               
                {/* <div className="sort-comics">
                   <label htmlFor="sort-comics-checkbox">sort in ascending order: 
                      <input 
@@ -50,11 +47,17 @@ class ComicsWrapper extends React.PureComponent {
                {
                   sortedComics.length 
                      ? sortedComics.map( comic => 
-                        <ComicThumbnail key={comic.num} {...comic} onPress={() => this.showFullComic(comic.id)}/>
+                        <ComicThumbnail key={comic.num} {...comic} onPress={() => this.showFullComic(comic.num)}/>
                      )
                      : <ComicThumbnail useFallback={true}/>
                }
                </ScrollView>
+               <TouchableOpacity 
+                  onPress={() => this.setState({ sort: !sort})}
+                  style={[rhoveStyle.actionButton, rhoveStyle.flexCenter]}
+               >
+                  <Text style={rhoveStyle.actionButtonText}>Toggle Sort Order</Text>
+               </TouchableOpacity>               
             </View>
          )
       }
